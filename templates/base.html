@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title%} {% endblock %} </title>
+    
+    {% block link %}
+    {% endblock %}
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="navbar" class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+        stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full"
+        viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>  -->
+      <!-- <i id="ham" class="fas fa-bars"></i>  -->
+      <i id="icon" class="fas fa-store myshop"></i>
+      <span class="ml-3 text-xl myshop">My Shop</span>
+
+    </a>
+    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+        <a href="/" class="">Home</a>
+        <a href="/" class="">Products</a>
+        <a href="/" class="">Cart</a>
+        {% if user.is_authenticated %}
+        <a href="/users/logout/" class="">Logout</a>
+        <a href="" class=""> Hello,{{user.first_name}}</a>
+        {% else %}
+        <a href="/users/login/" class="">Login</a>
+        {% endif %}
+    </nav>
+    <button id="btn"
+      class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+      <a href="/users/signup/">SignUp &nbsp</a>
+      <!-- <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>  -->
+      <i class="fas fa-sign-in-alt"></i>
+    </button>
+
+
+    
+
+  </div>
+</header>
+
+      {% block body%} {% endblock %}
+
+      {% block script%} {% endblock%}
+</body>
+</html>

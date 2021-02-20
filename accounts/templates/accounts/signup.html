@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% block title%}
+Signup
+{% endblock%}
+
+{% block link%}
+{% load static%}
+<link rel="stylesheet" href="{% static 'products/css/base.css' %}"> 
+<link rel="stylesheet" href="{% static 'accounts/css/signupform.css' %}"> 
+
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'products/icon/favicon.ico' %}">
+{% endblock%}
+
+{% block body%}
+
+<div class="formcontainer">
+
+    <h2 id='formhead'>SignUp</h2>
+
+    <form action="/users/signup/" method="POST" id="contact">
+        {% csrf_token %} 
+        <input type="text" name="firstname" id="firstname" placeholder="Enter First Name" value="" >
+        <input type="text" name="lastname" id="lastname" placeholder="Enter Last Name" value=""> 
+        <input type="email" name="email" id="email" placeholder="Enter email" value=""> 
+        <input type="text" minlength="10" maxlength="10" name="phone" id="phone" placeholder="Enter Phone Number" value="">
+        <div id="gender">
+            <label for="male" id="male"> Male</label>
+            <input type="radio" name="gender" checked value="True"> 
+            <label for="female" id="female"> Female</label>
+            <input type="radio" name="gender" value="True"> 
+        </div>
+        <input type="number" name="age" id="age" placeholder="Enter your age" value="">
+        <input type="password" name="password" id="password" placeholder="Enter your password" value="">
+        <input type="password" name="confirmpassword" id="cpassword" placeholder="Confirm your password" value="">
+        <!-- <button type="submit" id="btn" value="Register">Submit</button>  -->
+        <input type="submit" id="btn" value="SignUp">
+    </form>
+</div>
+{% endblock %}
+{%block script%}
+<script src="https://kit.fontawesome.com/38441474ad.js" crossorigin="anonymous"></script>
+{% endblock %}
+

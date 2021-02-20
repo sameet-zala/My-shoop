@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block title%}
+Signup
+{% endblock%}
+
+{% block link%}
+{% load static%}
+<link rel="stylesheet" href="{% static 'products/css/base.css' %}"> 
+<link rel="stylesheet" href="{% static 'accounts/css/loginform.css' %}"> 
+
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'products/icon/favicon.ico' %}">
+{% endblock%}
+
+{% block body%}
+
+<div class="formcontainer">
+
+    <h2 id='formhead'>LogIn</h2>
+
+    <form action="/users/login/" method="POST" id="contact">
+        {% csrf_token %} 
+        <input type="email" name="loginemail" id="email" placeholder="Enter email" value=""> 
+        <input type="password" name="loginpassword" id="password" placeholder="Enter your password" value="">
+    
+        <input type="submit" class="logbtn" id="btn" value="LogIn">
+    </form>
+</div>
+{% endblock %}
+{%block script%}
+<script src="https://kit.fontawesome.com/38441474ad.js" crossorigin="anonymous"></script>
+{% endblock %}
+
