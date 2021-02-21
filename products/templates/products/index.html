@@ -5,10 +5,11 @@ My shop
 
 {% block link%}
 {% load static%}
-<link rel="stylesheet" href="{% static 'products/css/base.css' %}"> 
-<link rel="stylesheet" href="{% static 'products/css/products.css' %}"> 
+<link rel="stylesheet" href="{% static 'products/css/base.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 
 <link rel="icon" type="image/png" sizes="32x32" href="{% static 'products/icon/favicon.ico' %}">
+
 {% endblock%}
 
 {% block body%}
@@ -25,7 +26,15 @@ My shop
           <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{i.category}}</h3>
           <h2 class="text-gray-900 title-font text-lg font-medium">{{i.product_name}}</h2>
           <h2 class="text-gray-900 title-font text-lg font-medium">{{i.desc}}</h2>
-          <p class="mt-1">{{i.price}}</p>
+          <p class="mt-1">${{i.price}}</p>
+          <button id="btn"
+            class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+            Add To Cart
+          </button>
+          <button id="btn"
+            class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 ">
+            View Product
+          </button>
         </div>
       </div>
       {% endfor %}
