@@ -20,20 +20,21 @@ My shop
       {% for i in product %}
       <div class=" p-4 card">
         <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="/media/{{i.image}}">
+          <img alt="ecommerce" class="object-cover object-center h-full block" src="/media/{{i.image}}">
         </a>
         <div class="mt-4">
           <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{i.category}}</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">{{i.product_name}}</h2>
-          <h2 class="text-gray-900 title-font text-lg font-medium">{{i.desc}}</h2>
+          <h2 class="text-gray-900 title-font text-lg font-medium"><u>{{i.product_name|slice:"0:31"}}...</u></h2>
+          <!-- <h2 class="text-gray-900 title-font text-lg font-medium">{{i.id}}</h2> -->
+          <h2 class="text-gray-900 title-font text-lg font-medium">{{i.desc|slice:"0:50"}}....</h2>
           <p class="mt-1">${{i.price}}</p>
-          <button id="btn"
-            class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-            Add To Cart
+          <button id="btn" 
+            class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" >
+            <a href="{% url 'addtocart' id=i.id%}">Add To Cart</a> 
           </button>
           <button id="btn"
             class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 ">
-            View Product
+            <a href="{% url 'viewproduct' id=i.id%}">View Product</a>
           </button>
         </div>
       </div>
