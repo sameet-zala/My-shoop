@@ -1,0 +1,96 @@
+{% extends 'base.html'%}
+{% block title%}
+Cart
+{% endblock%}
+
+{% block link%}
+{% load static%}
+<link rel="stylesheet" href="{% static 'products/css/base.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'products/css/products.css' %}"> -->
+
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'products/icon/favicon.ico' %}">
+<style>
+    h2+img{
+      margin: 50px auto;
+    }
+    #emptycart{
+      font-size: 2rem;
+      color: black;
+      font-weight: bolder;
+      margin-top: 150px;
+      text-align: center;
+    }
+    #carthead {
+      font-size: 2rem;
+      color: black;
+      font-weight: bolder;
+      margin-top: 20px;
+      margin-bottom: -60px;
+      text-decoration: underline;
+      text-align: center;
+    }
+    .cart{
+      background-color: white;
+      margin: 10px 10px ;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+    }
+    img{
+      padding: 10px 10px;
+    }
+    @media (max-width:1000px){
+      img+div{
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+      span+button{
+        margin-right: 50px !important;
+      } 
+    }
+
+</style>
+{% endblock%}
+
+{% block body%}
+
+
+<h2 id='carthead'>Cart</h2>
+{% if user.is_authenticated %}
+ <section class="text-gray-600 body-font overflow-hidden">
+ {% for i in cart%}
+  <div class="container px-5 py-24 mx-auto">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap cart">
+      <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="/media/{{i.product.image}}">
+      <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h2 class="text-sm title-font text-gray-500 tracking-widest">{{i.product.category}}</h2>
+        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{i.product.product_name}}</h1>
+        <div class="flex mb-4">
+        </div>
+        <p class="leading-relaxed">{{i.product.desc}}</p>
+        <div class="flex my-9">
+          <span class="title-font font-medium text-2xl text-gray-900 mt-3">$ {{i.product.price}}</span>
+          <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Buy Now</button>
+          <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"> <a href="{% url 'deletefromcart' id=i.product.id%}">Delete</a> </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% empty %}
+    <h2 id="emptycart">Your Cart is Empty Go and do some shopping</h2>
+    <!-- <i class="fas fa-shopping-cart"></i> -->
+    <img src="{% static 'products/icon/cart-plus.png' %}" alt="">
+  {% endfor %}
+{% else %}
+  <h2 id="emptycart">You dont have an account. </h2>
+  <img src="{% static 'products/icon/cart-plus.png' %}" alt="">
+{% endif %}
+
+</section>
+
+
+
+{% endblock %}
+{%block script%}
+<script src="https://kit.fontawesome.com/38441474ad.js" crossorigin="anonymous"></script>
+{% endblock %}
