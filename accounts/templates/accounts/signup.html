@@ -19,19 +19,19 @@ Signup
 
     <form action="/users/signup/" method="POST" id="contact">
         {% csrf_token %} 
-        <input type="text" name="firstname" id="firstname" placeholder="Enter First Name" value="" >
-        <input type="text" name="lastname" id="lastname" placeholder="Enter Last Name" value=""> 
-        <input type="email" name="email" id="email" placeholder="Enter email" value=""> 
-        <input type="text" minlength="10" maxlength="10" name="phone" id="phone" placeholder="Enter Phone Number" value="">
+        <input type="text" name="firstname" id="firstname" placeholder="Enter First Name" value="" required>
+        <input type="text" name="lastname" id="lastname" placeholder="Enter Last Name" value="" required> 
+        <input type="email" name="email" id="email" placeholder="Enter email" value="" required> 
+        <input type="text" maxlength="10" name="phone" id="phone" placeholder="Enter Phone Number" value="" required>
         <div id="gender">
             <label for="male" id="male"> Male</label>
             <input type="radio" name="gender" checked value="True"> 
             <label for="female" id="female"> Female</label>
             <input type="radio" name="gender" value="True"> 
         </div>
-        <input type="number" name="age" id="age" placeholder="Enter your age" value="">
-        <input type="password" name="password" id="password" placeholder="Enter your password" value="">
-        <input type="password" name="confirmpassword" id="cpassword" placeholder="Confirm your password" value="">
+        <input type="number" name="age" id="age" placeholder="Enter your age" value="" required>
+        <input type="password" name="password" id="password" placeholder="Enter your password" value="" required>
+        <input type="password" name="confirmpassword" id="cpassword" placeholder="Confirm your password" value="" required>
         <!-- <button type="submit" id="btn" value="Register">Submit</button>  -->
         <input type="submit" id="btn" value="SignUp">
     </form>
