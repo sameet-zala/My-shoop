@@ -4,7 +4,7 @@ from datetime import timezone
 # Create your models here.
 class Product(models.Model):
 
-    product_id = models.AutoField
+    # product_id = models.AutoField(null=True)
     product_name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     desc = models.CharField(max_length=300)
