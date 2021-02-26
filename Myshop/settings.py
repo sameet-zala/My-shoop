@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'p$oj!^c^2!uqyd#e0=txmltdydp8lgtvh3v9$z86l1o$$&xl7j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['my-shoop.herokuapp.com']
 # ALLOWED_HOSTS = []
