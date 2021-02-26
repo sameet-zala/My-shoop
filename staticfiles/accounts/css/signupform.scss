@@ -1,0 +1,75 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto+Mono&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root{
+    --font:'Poppins', sans-serif;
+}
+
+html{
+    font-family: var(--font);
+}
+
+body{
+    background: linear-gradient(to right,#6402dc,#de00ff);
+}
+
+
+.formcontainer{
+    /* border: 2px solid red; */
+    height: 100vh;
+    width: 70%;
+    margin: 50px auto;
+    text-align: center;
+    /* background-color: white; */
+    /* opacity: .5; */
+    border-radius: 30px;
+}
+
+input{
+    width: 60%;
+    display: block;
+    margin: 20px auto !important;
+    padding:10px 15px !important;
+    border-radius: 5px;
+    /* color: white; */
+    background-color: white;
+    /* outline: none; */
+}
+
+#btn{
+    padding:10px 10px;
+    font-size: 1.3rem;
+}
+
+#formhead{
+    font-size: 2rem;
+    color:black;
+    font-weight: bolder;    
+    text-decoration: underline;
+}
+
+::placeholder{
+    color: black;   
+    font-weight: bold;
+}
+label{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+#gender{
+    display: flex;
+    /* border: 2px solid red; */
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 55px;
+}
+@media (max-width:800px){
+    input{
+        width: 100%;
+    }
+    #gender{
+    padding: 0px;
+    }
+}

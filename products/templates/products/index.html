@@ -12,7 +12,7 @@ My shop
 <style>
   @media (max-width:1000px)
   {
-    #btn{
+    #button{
       width: 49%;
       height: 50px;
     }
@@ -36,7 +36,7 @@ My shop
           <!-- <h2 class="text-gray-900 title-font text-lg font-medium">{{i.id}}</h2> -->
           <h2 class="text-gray-900 title-font text-lg font-medium">{{i.desc|slice:"0:50"}}....</h2>
           <p class="mt-1">${{i.price}}</p>
-          <button id="btn" 
+          <button id="button" 
             class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" >
             {% if user.is_authenticated %}
             <a href="{% url 'addtocart' id=i.id%}">Add To Cart</a> 
@@ -44,7 +44,7 @@ My shop
             <a href="/displaycart/">Add To Cart</a> 
             {%endif%}
           </button>
-          <button id="btn"
+          <button id="button"
             class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 ">
             <a href="{% url 'viewproduct' id=i.id%}">View Product</a>
           </button>
