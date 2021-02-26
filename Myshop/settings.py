@@ -26,7 +26,7 @@ SECRET_KEY = 'p$oj!^c^2!uqyd#e0=txmltdydp8lgtvh3v9$z86l1o$$&xl7j'
 DEBUG = True
 
 ALLOWED_HOSTS = ['my-shoop.herokuapp.com']
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
