@@ -77,25 +77,25 @@ WSGI_APPLICATION = 'Myshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Myshop',
-        'USER': 'postgres',
-        'PASSWORD':'samit',
-        'HOST':'localhost',
-    }
-}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd5j2s0m4ukol0g',
-#         'USER': 'ixqyjemrlwditg',
-#         'PASSWORD':'763f005988771f3ba20d9224c5447350dc160b872fd968fe29ac8c1d5a08c7e3',
-#         'HOST':'ec2-34-203-255-149.compute-1.amazonaws.com',
-#         'PORT':'5432',
+#         'NAME': 'Myshop',
+#         'USER': 'postgres',
+#         'PASSWORD':'samit',
+#         'HOST':'localhost',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5j2s0m4ukol0g',
+        'USER': 'ixqyjemrlwditg',
+        'PASSWORD':'763f005988771f3ba20d9224c5447350dc160b872fd968fe29ac8c1d5a08c7e3',
+        'HOST':'ec2-34-203-255-149.compute-1.amazonaws.com',
+        'PORT':'5432',
+    }
+}
 
 # import dj_database_url
 # db_from_env = dj_database_url(conn_max_age=600)
