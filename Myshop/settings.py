@@ -25,7 +25,7 @@ SECRET_KEY = 'p$oj!^c^2!uqyd#e0=txmltdydp8lgtvh3v9$z86l1o$$&xl7j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['my-shoop.herokuapp.com']
+ALLOWED_HOSTS = ['my-shoop.herokuapp.com','localhost']
 # ALLOWED_HOSTS = []
 
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'products.apps.ProductsConfig',
@@ -142,5 +143,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT =  os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_URL = '/staticfiles/'
