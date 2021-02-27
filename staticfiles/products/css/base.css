@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto+Mono&display=swap');
+
+:root{
+    --font: sans-serif;
+}
+*{
+    font-family: var(--font);
+}
+#ham{
+    display: none;
+}
+body{
+    background: linear-gradient(to left,#00c8ff,#007fff);
+    /* background: linear-gradient(135deg,#0628f7,#00fff6); */
+    /* background: linear-gradient(135deg,#0628f7,#00fff6); */
+}
+.myshop{
+    cursor: pointer;
+}
+#navbar{
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+}
+nav a{
+    /* font-family: var(--font); */
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+nav a:hover{
+    /* background: linear-gradient(to right,#029fdc,#00d4ff); */
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+}
+
+#icon{
+    font-size: 50px;
+}
+#btn{
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding:10px 10px;
+    font-size: 1.3rem;
+}
+#btn:hover{
+    background-color:rgb(216, 216, 216); 
+    /* color: black; */
+}
