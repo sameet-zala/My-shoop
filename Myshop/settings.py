@@ -26,7 +26,7 @@ SECRET_KEY = 'p$oj!^c^2!uqyd#e0=txmltdydp8lgtvh3v9$z86l1o$$&xl7j'
 DEBUG = True
 
 ALLOWED_HOSTS = ['my-shoop.herokuapp.com']
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -77,25 +77,25 @@ WSGI_APPLICATION = 'Myshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'Myshop',
-#         'USER': 'postgres',
-#         'PASSWORD':'samit',
-#         'HOST':'localhost',
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd1dm4gtq05jb8b',
-        'USER': 'amusleelziqant',
-        'PASSWORD':'1decd28ab929336123b78ce84b72f673db8a8787e66137936fe6c706450bab73',
-        'HOST':'ec2-54-146-73-98.compute-1.amazonaws.com',
-        'PORT':'5432',
+        'NAME': 'Myshop',
+        'USER': 'postgres',
+        'PASSWORD':'samit',
+        'HOST':'localhost',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd1dm4gtq05jb8b',
+#         'USER': 'amusleelziqant',
+#         'PASSWORD':'1decd28ab929336123b78ce84b72f673db8a8787e66137936fe6c706450bab73',
+#         'HOST':'ec2-54-146-73-98.compute-1.amazonaws.com',
+#         'PORT':'5432',
+#     }
+# }
 
 # import dj_database_url
 # db_from_env = dj_database_url(conn_max_age=600)
@@ -141,5 +141,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT =  os.path.join(BASE_DIR,'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
+MEDIA_URL = '/images/'
