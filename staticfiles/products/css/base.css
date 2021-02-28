@@ -22,6 +22,7 @@ body{
     border-radius: 10px;
     width: 90%;
     margin: auto;
+    position: relative;
 }
 nav a{
     /* font-family: var(--font); */
@@ -58,4 +59,39 @@ nav a:hover{
 #btn:hover{
     background-color:rgb(216, 216, 216); 
     /* color: black; */
+}
+#bars{
+    font-size: 25px;
+    position: absolute;
+    left: 30px;
+    display: none;
+}
+#bars:focus{
+    outline: none;
+}
+
+@media(max-width:765px) {
+    #bars{
+        display: block;
+        z-index: 2;
+    }
+    #nav{
+        display:none ;
+        position: absolute;
+        transition-property: all;
+        transition: 5s ease;
+    }
+    #nav.show {
+        display: flex;
+        flex-direction: column;
+    }
+    .change-bg{
+        left: -150px;
+        top:-80px;
+        background: radial-gradient(circle,#e94498,#b81568);
+        height: 540px;
+        width: 450px;
+        z-index: 1;
+        border-radius: 50%;
+    }
 }

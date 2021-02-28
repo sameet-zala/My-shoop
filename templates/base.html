@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
 
   {% block meta%} {% endblock %}
   <title> {% block title%} {% endblock %} </title>
@@ -26,12 +26,15 @@
         viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>  -->
-        <!-- <i id="ham" class="fas fa-bars"></i>  -->
+      <button id="bars">
+        <i class="fas fa-bars" hidden="ture"></i>
+      </button>
+    
         <i id="icon" class="fas fa-store myshop"></i>
         <span class="ml-3 text-xl myshop">My Shop</span>
-
+        
       </a>
-      <nav
+      <nav id='nav'
         class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
         <a href="/" class="">Home</a>
         <a href="/" class="">Products</a>
@@ -42,6 +45,8 @@
         <a href="/users/login/" class="">Login</a>
         {% endif %}
       </nav>
+      
+      
       <button id="btn"
         class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
         {% if user.is_authenticated %}
@@ -65,9 +70,8 @@
   {% block body%} {% endblock %}
 
   {% block script%} {% endblock%}
+  <script src="{% static 'product/js/base.js' %}"></script>
 
 </body>
 
 </html>
-
-<!-- this is feature1 branch -->
