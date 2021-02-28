@@ -27,7 +27,7 @@ def handlesignup(request):
         myuser.first_name = firstname
         myuser.last_name = lastname
         myuser.email = email
-        myuser.phone = phone
+        myuser.phone_number = phone
         myuser.gender = gender
         myuser.age = age
         myuser.confirmpassword = pass2
