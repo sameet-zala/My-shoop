@@ -9,6 +9,6 @@
 
 function onClickMenu(){
     document.getElementById('nav').classList.toggle('show');
-    document.getElementById('nav').classList.toggle('change-bg');
-
+    // document.getElementById('nav').classList.toggle('change-bg');
+    document.getElementById('bars').classList.toggle('change-bg');
 }
