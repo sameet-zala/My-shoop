@@ -95,7 +95,7 @@ nav a:hover{
         background: radial-gradient(circle,#e94498,#b81568);
         border-radius: 50%;
         transform: translate(-48%,0%); 
-        transition: 1s ease; 
+        transition: 0.3s ease; 
     }
     
 }
