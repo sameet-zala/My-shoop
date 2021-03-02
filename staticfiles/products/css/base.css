@@ -72,22 +72,35 @@ nav a:hover{
 
 @media(max-width:765px) {
     
-    
+    nav a{
+        display: block;
+    }
     #bars{
         display: inline;
         z-index: 1;
         border: 2px solid black ;
         padding: 0px 10px;
         border-radius: 5px;
+
     }
     #nav{
-        display:none;  
-        /* transition: 5s ease; */
+        display: none;
+        width: 100%;        
     }
     #nav.show{
-        display: flex;
-        flex-direction: column;
-        z-index: 2;
+        display: block;
+        animation:slide 0.5s ease; 
+        animation-fill-mode: forwards;
+
     }
+    @keyframes slide { 
+        0% { 
+            width: 100%;
+        } 
+
+        100% { 
+            width: 40%;
+        } 
+    } 
     
 }
