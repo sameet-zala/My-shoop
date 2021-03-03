@@ -85,21 +85,23 @@ nav a:hover{
     }
     #nav{
         display: none;
-        width: 100%;        
+        position: relative;
+        top:-150px;   
+        width: 40%;
     }
     #nav.show{
         display: block;
-        animation:slide 0.5s ease; 
+        animation:slide .3s ease; 
         animation-fill-mode: forwards;
 
     }
     @keyframes slide { 
         0% { 
-            width: 100%;
+            top:-150px;
         } 
 
         100% { 
-            width: 40%;
+            top:0px
         } 
     } 
     
